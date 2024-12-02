@@ -1,6 +1,6 @@
 import java.util.*;
 public class Goal{
-    private Map<String, double> progressList = new HashMap<String, double>();
+    private Map<String, Double> progressList = new HashMap<String, Double>();
     private String goalName;
     private int steps;
     private int stepsCompleted = 0;
@@ -15,6 +15,10 @@ public class Goal{
         steps = numSteps;
     }
 
+    public int getStepsCompleted(){
+        return stepsCompleted;
+    }
+
     public void completeStep(){
         if(stepsCompleted < steps) {
             stepsCompleted++;
@@ -26,20 +30,24 @@ public class Goal{
         progress = stepsCompleted/steps;
     }
 
+    public String getGoalName() {
+        return goalName;
+    }
+
     public double getProgress(){
         return progress;
     }
 
     public void addToProgressList(){
-        progressList.add(goalName, progress);
+        //progressList.add(goalName, progress);
     }
 
-    public Map<String, double> getProgressList() {
+    public Map<String, Double> getProgressList() {
         return progressList;
     }
 
     public void resetProgressList(){
-        progressList = new HashMap<String, double>();
+        progressList = new HashMap<String, Double>();
     }
 
 }
