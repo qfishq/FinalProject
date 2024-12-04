@@ -1,38 +1,38 @@
 package src;
 
-import java.util.Map;
-import java.util.PriorityQueue;
-import java.util.Queue;
-import java.util.TreeMap;
+import java.util.*;
 
-public class TodoList {
+public class TodoList{
     //replace second String with Item later
     /**key = date, value = item**/
-    private Map<String, String> bruh;
-    private Queue<Map> todolist;
+    private Map<String, String> m;
+    private ArrayList<Map> todolist;
     public TodoList(){
-        todolist = new PriorityQueue<>();
-        bruh = new TreeMap<>();
+        todolist = new ArrayList<>();
+        m = new TreeMap<>();
     }
     //replace second String with Item later
     public void Add(String k, String v) {
-        bruh.put(k, v);
-        todolist.add(bruh);
+        m.put(k, v);
+        todolist.add(m);
     }
     //replace second String with Item later
-    public void Remove(String k, String v) {
-        bruh.remove(k, v);
-        todolist.remove(bruh);
+    public void Remove(String k) {
+        m.remove(k);
     }
+
+//    public void reorder() {
+//        for (int i = 0; i < todolist.size(); i++) {
+//
+//        }
+//    }
 
     public String toString() {
         String res = "";
-        for (String key : bruh.keySet()) {
-            res += "key: " + key;
+        for (String key : m.keySet()) {
+            res += "Task: " + m.get(key) + " | Date to complete by: " + key + "\n";
         }
-        for (String value : bruh.values()) {
-            res += "value: " + value;
-        }
+
         return res;
     }
 }
