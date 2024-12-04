@@ -5,6 +5,10 @@ public class Goal{
     private int steps;
     private int stepsCompleted = 0;
     private double progress;
+    private int rank;
+    private static Set rankList = new TreeSet<>();
+    private static Map<Integer, Goal> rankMap = new TreeMap<Integer, Goal>();
+    private static int max = 300;
 
     public Goal(String g){
         goalName = g;
@@ -13,6 +17,12 @@ public class Goal{
     public Goal(String g, int numSteps){
         goalName = g;
         steps = numSteps;
+    }
+    public Goal(String g, int numSteps, int rank){
+        goalName = g;
+        steps = numSteps;
+        this.rank = rank;
+        //need to figure out ranking system
     }
 
     public int getStepsCompleted(){
@@ -27,15 +37,15 @@ public class Goal{
     }
 
     public void progress(){
-        progress = stepsCompleted/steps;
+        progress = stepsCompleted*(1.0)/steps;
     }
 
     public String getGoalName() {
         return goalName;
     }
 
-    public double getProgress(){
-        return progress;
+    public int getProgress(){
+        return (int)(progress*100);
     }
 
     public void addToProgressList(){
