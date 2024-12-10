@@ -1,15 +1,32 @@
+/**
+ * a parent class to add any item to the organizer
+ */
 public class Item {
     private String eventName;
     private boolean urgent;
     private String time;
     private String date;
 
+    /**
+     * creates an Item object
+     * @param eventName name of the event
+     * @param time time the event takes place
+     * @param date day the event takes place
+     */
     public Item(String eventName, String time, String date){
         this.eventName = eventName;
         this.time = time;
         this.date = date;
         urgent = false;
     }
+
+    /**
+     * creates an Item object
+     * @param eventName name of the event
+     * @param urgent urgency of the event
+     * @param time time the event takes place
+     * @param date day the event takes place
+     */
     public Item(String eventName, boolean urgent, String time, String date){
         this.eventName = eventName;
         this.urgent = urgent;
