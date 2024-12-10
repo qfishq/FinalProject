@@ -4,9 +4,56 @@ public class Combined {
 
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
+        GoalList gl = new GoalList();
+        int action;
 
-        System.out.println("Welcome to the Life Organizer! Type in a number to continue!\n(1) Add to you todo list\n(2) Update your todo list\n(3)Add to your goals\n(4) Update your goals\n(5) View your lists");
-        int action = input.nextInt();
+        do {
+            System.out.println("Welcome to the Life Organizer! Type in a number to continue!\n(1) Add to you todo list\n(2) Update your todo list\n(3) Add to your goals\n(4) Update your goals\n(5) View your lists \n(6) Quit");
+
+            action = input.nextInt();
+            input.nextLine();
+
+            if (action == 3) {
+
+                System.out.println("What's you goal: ");
+                String goalName = input.nextLine();
+
+                System.out.println("How many steps are in you goal: ");
+                int numSteps = input.nextInt();
+
+                Goal newGoal = new Goal(goalName, numSteps);
+                //System.out.println(newGoal.getRank());
+                gl.addToGoals(newGoal);
+
+                //System.out.println(gl.getNumGoals());
+
+                gl.view();
+                String bob;
+                do {
+                    System.out.println("To reprioritize your goals, type r, else type c to continue");
+                    bob = input.nextLine();
+                } while(!bob.equals("c") && !bob.equals("r"));
+
+                if(bob.equals("r")){
+                    System.out.println("Time to prioritize all you goals");
+                    Map<Integer, Goal> temp = new TreeMap<Integer, Goal>();
+                    for(int i = 0; i < gl.getNumGoals(); i++){
+                        System.out.println("Which goal is the next most priority:");
+                        int key = input.nextInt();
+                        temp.put(i+1, gl.getList().get(key));
+                    }
+                    gl.reRank();
+                    gl.setList(temp);
+
+                    gl.view();
+
+                }
+                else if(bob.equals("c")){
+                    gl.view();
+                }
+            }
+        }
+        while(action != 6);
 
     }
 }

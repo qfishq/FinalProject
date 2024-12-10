@@ -5,6 +5,7 @@ public class Goal{
     private int steps;
     private int stepsCompleted = 0;
     private double progress;
+    private static int defaultRank = 0;
     private int rank;
     private static Set rankList = new TreeSet<>();
     private static Map<Integer, Goal> rankMap = new TreeMap<Integer, Goal>();
@@ -13,16 +14,38 @@ public class Goal{
     public Goal(String g){
         goalName = g;
         steps = 5;
+        while(rankList.contains(defaultRank)){
+            defaultRank++;
+        }
+        rank = defaultRank;
+
     }
     public Goal(String g, int numSteps){
         goalName = g;
         steps = numSteps;
+        defaultRank++;
+        while(rankList.contains(defaultRank)){
+            defaultRank++;
+        }
+        rank = defaultRank;
     }
-    public Goal(String g, int numSteps, int rank){
-        goalName = g;
+    public Goal(String goal, int numSteps, int rrank){
+        goalName = goal;
         steps = numSteps;
-        this.rank = rank;
+        while(rankList.contains(rrank)){
+            rrank++;
+        }
+        rank = rrank;
+        rankList.add(rrank);
         //need to figure out ranking system
+    }
+
+    public void setRank(int r){
+        rank = r;
+    }
+
+    public int getRank(){
+        return rank;
     }
 
     public int getStepsCompleted(){
@@ -58,6 +81,10 @@ public class Goal{
 
     public void resetProgressList(){
         progressList = new HashMap<String, Double>();
+    }
+
+    public String toString(){
+        return goalName;
     }
 
 }
