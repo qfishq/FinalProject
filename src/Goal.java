@@ -11,6 +11,9 @@ public class Goal{
     private static Map<Integer, Goal> rankMap = new TreeMap<Integer, Goal>();
     private static int max = 300;
 
+    /**
+     * class constructor that instantiates String goalName, int Steps, and int rank
+     * **/
     public Goal(String g){
         goalName = g;
         steps = 5;
@@ -20,6 +23,10 @@ public class Goal{
         rank = defaultRank;
 
     }
+
+    /**
+     * class constructor that instantiates String goalName, int Steps, and int rank
+     * **/
     public Goal(String g, int numSteps){
         goalName = g;
         steps = numSteps;
@@ -29,6 +36,10 @@ public class Goal{
         }
         rank = defaultRank;
     }
+
+    /**
+     * class constructor that instantiates String goalName, int Steps, and int rank
+     * **/
     public Goal(String goal, int numSteps, int rrank){
         goalName = goal;
         steps = numSteps;
@@ -40,18 +51,31 @@ public class Goal{
         //need to figure out ranking system
     }
 
+    /**
+     * @param r rank of the goal depending on priority
+     * **/
     public void setRank(int r){
         rank = r;
     }
 
+    /**
+     * @return rank of the goal depending on priority
+     * **/
     public int getRank(){
         return rank;
     }
 
+
+    /**
+     * @return number of steps completed of the goal
+     * **/
     public int getStepsCompleted(){
         return stepsCompleted;
     }
 
+    /**
+     * increments stepsCompleted
+     * **/
     public void completeStep(){
         if(stepsCompleted < steps) {
             stepsCompleted++;
@@ -59,32 +83,53 @@ public class Goal{
         }
     }
 
+    /**
+     * updates progress
+     * **/
     public void progress(){
         progress = stepsCompleted*(1.0)/steps;
     }
 
+    /**
+     * @return name of the goal
+     * **/
     public String getGoalName() {
         return goalName;
     }
 
+    /**
+     * @return percent of goal completed
+     * **/
     public int getProgress(){
         return (int)(progress*100);
     }
 
+    /**
+     * adds goal to the progressList
+     * **/
     public void addToProgressList(){
-        //progressList.add(goalName, progress);
+        progressList.put(goalName, progress);
     }
 
+    /**
+     * @return the map of goals and their completion status
+     * **/
     public Map<String, Double> getProgressList() {
         return progressList;
     }
 
+    /**
+     * resets progressList
+     * **/
     public void resetProgressList(){
         progressList = new HashMap<String, Double>();
     }
 
+    /**
+     * @return the goal name and completion status
+     * **/
     public String toString(){
-        return goalName;
+        return goalName + " - " + getProgress() + "% completed";
     }
 
 }

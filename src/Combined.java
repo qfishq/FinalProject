@@ -38,7 +38,7 @@ public class Combined {
                     System.out.println("Time to prioritize all you goals");
                     Map<Integer, Goal> temp = new TreeMap<Integer, Goal>();
                     for(int i = 0; i < gl.getNumGoals(); i++){
-                        System.out.println("Which goal is the next most priority:");
+                        System.out.println("Which goal is the next most priority (enter the number):");
                         int key = input.nextInt();
                         temp.put(i+1, gl.getList().get(key));
                     }
