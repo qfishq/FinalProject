@@ -12,8 +12,11 @@ public class Combined {
 
             action = input.nextInt();
             input.nextLine();
+            if(action == 1){
 
-            if (action == 3) {
+            }
+
+            else if(action == 3) {
 
                 System.out.println("What's you goal: ");
                 String goalName = input.nextLine();
@@ -50,6 +53,26 @@ public class Combined {
                 }
                 else if(bob.equals("c")){
                     gl.view();
+                }
+            }
+            else if(action == 4){
+                gl.view();
+                System.out.println("Which goal do you want to update (number):");
+                int indexToUpdate = input.nextInt();
+                input.nextLine();
+                Goal goalToUpdate = gl.getGoal(indexToUpdate);
+
+                while(goalToUpdate.getProgress() != 100){
+                    System.out.println("Did you complete a step? (y/n): ");
+                    String response = input.nextLine();
+                    if(response.equals("y")){
+                        goalToUpdate.completeStep();
+                        System.out.println(goalToUpdate.getProgress() + "% complete");
+                        //System.out.println(goalToUpdate.getStepsCompleted());
+                    }
+                    else if(response.equals("n")){
+                        break;
+                    }
                 }
             }
         }

@@ -47,6 +47,14 @@ public class GoalList {
     }
 
     /**
+     * @param i index of the goal that is to be returned
+     * @return goal at specific index
+     * **/
+    public Goal getGoal(int i){
+        return list.get(i);
+    }
+
+    /**
      * @return the goalList
      * **/
     public Map<Integer, Goal> getList(){
