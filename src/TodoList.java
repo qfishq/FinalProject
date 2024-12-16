@@ -36,6 +36,8 @@ public class TodoList{
     /**
      * @return all events in calendar with date and event name
      * **/
+    //Big O: O(N)
+    //Big Omega: Omega(1)
     public String toString() {
         String res = "";
         for (String key : m.keySet()) {
