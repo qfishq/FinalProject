@@ -1,5 +1,6 @@
 /**
  * a subclass of Item for events that are assignments or tests
+ * @author kimmy
  */
 public class Assignment extends Item{
     private double points;
