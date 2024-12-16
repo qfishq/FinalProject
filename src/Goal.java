@@ -1,6 +1,7 @@
 import java.util.*;
 /**
  * a class that keeps track of goals and their progress
+ * @author Ameya
  */
 public class Goal{
     private Map<String, Double> progressList = new HashMap<String, Double>();
