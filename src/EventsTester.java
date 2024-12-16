@@ -1,3 +1,7 @@
+/**
+ * a tester class for items, personal events, and assignments
+ * @author kimmy
+ */
 public class EventsTester {
     public static void main(String[] args){
         Assignment essay = new Assignment("AP Lang Essay", true, "8:30 am", "12/11/2024", 10, "AP Lang");
