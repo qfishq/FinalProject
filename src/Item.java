@@ -57,6 +57,23 @@ public class Item {
     public void setDate(String date){
         this.date = date;
     }
+    
+    /**
+     * @param bob object it's being compared to
+     * @return int representing the comparison
+     */
+    public int compareTo(Object bob){
+        Item fred = (Item)bob;
+        if(fred.getUrgency() == urgent){
+            return 0;
+        }
+        else if(fred.getUrgency()){
+            return -1;
+        }
+        else{
+            return 1;
+        }
+    }
     public String toString(){
         if (urgent){
             return eventName + " on " + date + " at " + time + "\nVery urgent!\n";
