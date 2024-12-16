@@ -1,5 +1,8 @@
 import java.util.Map;
 import java.util.TreeMap;
+/**
+ * a class that maps goals by their priority
+ */
 
 public class GoalList {
 

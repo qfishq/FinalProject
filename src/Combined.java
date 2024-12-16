@@ -1,4 +1,8 @@
 import java.util.*;
+
+/**
+ * a class that combines all the other classes to form a runnable program that keeps track of goals and todos
+ */
 public class Combined {
     //going to put together all the components into a runnable program here
 
@@ -53,7 +57,6 @@ public class Combined {
                     fred = new PersonalEvent(name, urgent, duedate, location, addInfo);
                 }
 
-                //Here we add the fred to the TodoList (need to modify the class)
                 todos.Add(duedate, name);
 
                 System.out.println("Updated Todo List:");

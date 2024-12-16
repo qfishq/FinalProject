@@ -1,6 +1,10 @@
-package src;
+//package src;
 
 import java.util.*;
+
+/**
+ * a class that keeps track of items and prioritizes them
+ */
 
 public class TodoList{
     private Map<String, String> m;
