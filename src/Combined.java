@@ -2,6 +2,7 @@ import java.util.*;
 
 /**
  * a class that combines all the other classes to form a runnable program that keeps track of goals and todos
+ * @author Ameya
  */
 public class Combined {
     //going to put together all the components into a runnable program here
