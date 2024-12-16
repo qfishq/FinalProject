@@ -36,8 +36,11 @@ public class TodoList{
     /**
      * @return all events in calendar with date and event name
      * **/
+    
     public String toString() {
         String res = "";
+        //Big O: O(N)
+        //Big Omega: Omega(1)
         for (String key : m.keySet()) {
             res += "Task: " + m.get(key) + " | Date to complete by: " + key + "\n";
         }

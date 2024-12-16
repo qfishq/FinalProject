@@ -30,6 +30,8 @@ public class Goal{
     /**
      * class constructor that instantiates String goalName, int Steps, and int rank
      * **/
+    // Big-O: O(n)
+    // Big-Omega: O(1)
     public Goal(String g, int numSteps){
         goalName = g;
         steps = numSteps;
