@@ -1,5 +1,6 @@
 /**
  * a parent class to add any item to the organizer
+ * @author kimmy
  */
 public class Item {
     private String eventName;
