@@ -1,4 +1,8 @@
 //package src;
+/**
+ * a class that creates a todo-list and allows users to add and remove events
+ * @author Lily
+ */
 
 import java.util.*;
 
