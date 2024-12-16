@@ -1,5 +1,6 @@
 /**
- *  a subclass of Item that is for personal events that do not fall under the assignment category
+ * a subclass of Item that is for personal events that do not fall under the assignment category
+ * @ author kimmy
  */
 public class PersonalEvent extends Item{
     private String location;
