@@ -18,6 +18,7 @@ public class TodoList{
     }
 
     /**
+     * method that adds an event
      * @param k date of the event user wants to add
      * @param v name of event user wants to add
      * **/
@@ -26,6 +27,7 @@ public class TodoList{
         todolist.add(m);
     }
     /**
+     * method that removes an event
      * @param k date of the event user wants to remove
      * **/
     public void Remove(String k) {
