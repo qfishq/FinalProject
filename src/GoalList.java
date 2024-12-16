@@ -2,6 +2,7 @@ import java.util.Map;
 import java.util.TreeMap;
 /**
  * a class that maps goals by their priority
+ * @author Ameya
  */
 
 public class GoalList {
